@@ -10,9 +10,9 @@ Site statique développé pour moderniser la présence en ligne du magasin Lamal
 
 ## Déploiement (GitHub Pages)
 
-Le déploiement est **automatisé** via GitHub Actions. À chaque push sur `main`, le workflow `.github/workflows/deploy-pages.yml` synchronise les fichiers sources (`index.html`, `styles.css`, `assets/`) vers le dossier `docs/`, qui est servi par GitHub Pages.
+Le déploiement est **automatisé** via GitHub Actions. À chaque push sur `main`, le workflow `.github/workflows/deploy-pages.yml` déploie directement les fichiers du dépôt sur GitHub Pages.
 
-- **Configuration Pages** : Branch `main`, dossier `/docs`.
+- **Configuration Pages** : Source « GitHub Actions » (pas de dossier `docs/`).
 - **Aucune action manuelle** : il suffit de modifier les fichiers à la racine et de pousser sur `main`.
 
 ### Liens
