@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lamalou Sport & Nature | Cyril ABBAL</title>
+    <meta name="description" content="Lamalou Sport & Nature - Votre spécialiste textile, trail, randonnée et sports collectifs à Lamalou-les-Bains. Personnalisation, marquage, location vélos.">
+    <meta property="og:title" content="Lamalou Sport & Nature | Cyril ABBAL">
+    <meta property="og:description" content="Textile pro, trail, randonnée, sports collectifs. Personnalisation et marquage. Balades gourmandes et sorties mouflons dans le Caroux.">
+    <meta property="og:image" content="assets/LOGO-sport-nature.png">
+    <meta property="og:type" content="website">
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Oswald:wght@700&display=swap"
         rel="stylesheet">
@@ -18,10 +23,11 @@
 
     <nav>
         <div class="brand">Lamalou <span>Sport</span> & Nature</div>
+        <button class="burger" aria-label="Menu">&#9776;</button>
         <ul class="nav-links">
             <li><a href="#univers">Secteurs</a></li>
             <li><a href="#marquage">Marquage</a></li>
-            <li><a href="#ballades">Ballades</a></li>
+            <li><a href="#ballades">Balades</a></li>
             <li><a href="#mouflon">Mouflon</a></li>
             <li><a href="#commande">Catalogue</a></li>
         </ul>
@@ -36,30 +42,38 @@
         </div>
     </header>
 
-    <section id="univers">
+    <section id="univers" class="fade-in">
         <h2 class="section-title">Nos Secteurs d'activité</h2>
         <div class="grid-4">
-            <div class="card"><i class="fas fa-users-gear"></i>
-                <h3>Clubs & Assos</h3>
-                <p>Équipements complets pour collectivités et associations sportives.</p>
+            <div class="card"><i class="fas fa-futbol"></i>
+                <h3>Club</h3>
+                <p>Équipements sportifs pour clubs et équipes.</p>
             </div>
-            <div class="card"><i class="fas fa-helmet-safety"></i>
-                <h3>BTP & Travaux</h3>
-                <p>Vêtements techniques, haute visibilité et chaussures de sécurité.</p>
+            <div class="card"><i class="fas fa-hands-helping"></i>
+                <h3>Association</h3>
+                <p>Textile personnalisé pour vos événements et membres.</p>
             </div>
-            <div class="card"><i class="fas fa-utensils"></i>
-                <h3>CHR / Camping</h3>
-                <p>Solutions pour hôtels, restaurants (vestes de cuisine, tabliers).</p>
+            <div class="card"><i class="fas fa-building"></i>
+                <h3>Entreprise</h3>
+                <p>Vêtements de travail, EPI et haute visibilité.</p>
             </div>
-            <div class="card"><i class="fas fa-hospital"></i>
-                <h3>Santé</h3>
-                <p>Blouses et tuniques pour centres hospitaliers et soignants.</p>
+            <div class="card"><i class="fas fa-tools"></i>
+                <h3>Artisan</h3>
+                <p>Tenues professionnelles adaptées à chaque métier.</p>
+            </div>
+            <div class="card"><i class="fas fa-store"></i>
+                <h3>Commerçant</h3>
+                <p>Tabliers, vestes et uniformes pour votre commerce.</p>
+            </div>
+            <div class="card"><i class="fas fa-landmark"></i>
+                <h3>Collectivité</h3>
+                <p>Solutions textiles pour mairies, écoles et services publics.</p>
             </div>
         </div>
     </section>
 
     <!-- section vêtements et matériel (trail/rando) -->
-    <section id="produits" style="background: rgba(17, 17, 17, 0.6);">
+    <section id="produits" class="fade-in" style="background: rgba(17, 17, 17, 0.6);">
         <h2 class="section-title">Vêtements & Matériel</h2>
         <div class="card" style="width: 100%;  background: rgba(26,29,26,0.95);">
             <p
@@ -76,7 +90,7 @@
         </div>
     </section>
 
-    <section id="marquage" style="background: rgba(17, 17, 17, 0.8);">
+    <section id="marquage" class="fade-in" style="background: rgba(17, 17, 17, 0.8);">
         <h2 class="section-title">Personnalisation Textiles</h2>
         <div class="card" style="width: 100%;  background: rgba(26, 29, 26, 0.95);">
             <p
@@ -96,7 +110,7 @@
 
 
 
-    <section id="ballades" style="background: rgba(17, 17, 17, 0.6);">
+    <section id="ballades" class="fade-in" style="background: rgba(17, 17, 17, 0.6);">
         <h2 class="section-title">Balade Gourmande</h2>
         <div class="event-box">
             <div class="event-info">
@@ -112,12 +126,12 @@
                         flyer</a></p>
             </div>
             <div class="event-date">
-                16€<span>par pers.</span>
+                16€<span> par pers.</span>
             </div>
         </div>
     </section>
 
-    <section id="mouflon">
+    <section id="mouflon" class="fade-in">
         <h2 class="section-title">Sortie Mouflon</h2>
         <div class="event-box">
             <div class="event-info">
@@ -133,14 +147,14 @@
                         flyer</a></p>
             </div>
             <div class="event-date">
-                13€<span>par pers.</span>
+                13€<span> par pers.</span>
             </div>
         </div>
     </section>
 
-    <section id="location" style="background: rgba(17, 17, 17, 0.6);">
+    <section id="location" class="fade-in" style="background: rgba(17, 17, 17, 0.6);">
         <h2 class="section-title">Location de vélos</h2>
-        <div class="card" style="width:100%; border-top:4px solid var(--primary); background: rgba(26,29,26,0.95);">
+        <div class="card" style="width:100%;background: rgba(26,29,26,0.95);">
             <p>Situé à deux pas de la voie verte, notre magasin propose la location de :</p>
             <div class="product-tags">
                 <span class="tag">Vélos</span>
@@ -151,7 +165,7 @@
         </div>
     </section>
 
-    <section id="commande">
+    <section id="commande" class="fade-in">
         <h2 class="section-title">Devis Gratuit</h2>
         <div class="card"
             style="max-width: 650px; margin: 0 auto; text-align: center; border: 2px solid var(--primary); background: rgba(26, 29, 26, 0.95);">
@@ -162,7 +176,7 @@
     </section>
 
     <!-- Avis Google -->
-    <section id="avis" style="background: rgba(17, 17, 17, 0.7);">
+    <section id="avis" class="fade-in" style="background: rgba(17, 17, 17, 0.7);">
         <h2 class="section-title">Ce que disent nos clients</h2>
         <div class="reviews">
             <!-- Example static reviews; replace with widget or real data -->
@@ -183,23 +197,37 @@
     </section>
 
     <footer>
-        <div style="margin-bottom: 30px;">
-            <p style="font-size: 1.8rem; font-family: 'Oswald'; color: var(--primary);">CYRIL ABBAL</p>
-            <p><i class="fas fa-phone"></i> 06 70 54 63 21 / 04 67 97 54 55</p>
-            <p><i class="fas fa-envelope"></i> cyril.abbal@orange.fr</p>
-            <p style="margin-top:10px;"><i class="fas fa-clock"></i> Horaires :
-                Lun-Sam 9h‑12h / 15h‑19h<br>
-                (fermé le dimanche)</p>
+        <div class="footer-grid">
+            <div class="footer-info">
+                <p style="font-size: 1.8rem; font-family: 'Oswald'; color: var(--primary);">CYRIL ABBAL</p>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Clemenceau, 34240 Lamalou-les-Bains</p>
+                <p><i class="fas fa-phone"></i> 06 70 54 63 21 / 04 67 97 54 55</p>
+                <p><i class="fas fa-envelope"></i> cyril.abbal@orange.fr</p>
+                <p style="margin-top:10px;"><i class="fas fa-clock"></i> Lun-Sam 9h‑12h / 15h‑19h (fermé le dimanche)
+                </p>
+                <div style="margin-top: 15px; font-size: 1.5rem;">
+                    <i class="fab fa-facebook" style="color: var(--primary); margin-right: 15px;"></i>
+                    <i class="fab fa-instagram" style="color: var(--primary);"></i>
+                </div>
+            </div>
+            <div class="footer-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d901.9587535775867!2d3.0814422896025455!3d43.5926820341483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b19d4b93c67fd7%3A0xb12cd89886f63690!2sSport%20%26%20Nature!5e1!3m2!1sfr!2sfr!4v1772978829951!5m2!1sfr!2sfr"
+                    width="250" height="250" style="border: 2px solid var(--primary); border-radius: 10px; max-width: 100%;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
-        <p><strong>Lamalou Sport & Nature</strong> - Av. Clemenceau, 34240 Lamalou-les-Bains</p>
-        <div style="margin: 20px 0; font-size: 1.5rem;">
-            <i class="fab fa-facebook" style="color: var(--primary); margin: 0 10px;"></i>
-            <i class="fab fa-instagram" style="color: var(--primary); margin: 0 10px;"></i>
-        </div>
-        <p style="color: #666; font-size: 0.8rem;">&copy; 2026 - Site Non Officiel Lamalou Sport & Nature by Matounet
-        </p>
+        <p style="color: #666; font-size: 0.8rem; margin-top: 30px;">&copy; 2026 - Site Non Officiel Lamalou Sport &
+            Nature by Matounet</p>
     </footer>
 
+    <a href="tel:0670546321" class="btn-call" aria-label="Appeler">
+        <i class="fas fa-phone"></i> Appeler
+    </a>
+
+    <button id="scroll-top" aria-label="Retour en haut">&uarr;</button>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
