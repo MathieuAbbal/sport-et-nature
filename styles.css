@@ -19,7 +19,7 @@ body {
     color: var(--text-light);
     scroll-behavior: smooth;
     /* --- NOUVEAU FOND DE NATURE --- */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
         url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=2070&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
@@ -70,6 +70,16 @@ nav {
     color: var(--primary);
 }
 
+/* --- BURGER BUTTON --- */
+.burger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 /* --- HERO --- */
 .hero {
     height: 80vh;
@@ -78,7 +88,7 @@ nav {
     justify-content: center;
     text-align: center;
     padding: 0 8%;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('http://googleusercontent.com/image_collection/image_retrieval/3652259489454690353_0');
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('http://googleusercontent.com/image_collection/image_retrieval/3652259489454690353_0');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -182,9 +192,10 @@ section {
     display: flex;
     gap: 30px;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 20px;
     border: 1px solid rgba(255, 102, 0, 0.1);
-    border-left: 5px solid var(--primary); /* consistent orange accent */
+    border-left: 5px solid var(--primary);
     backdrop-filter: blur(5px);
 }
 
@@ -262,11 +273,28 @@ section {
 
 /* --- FOOTER --- */
 footer {
-    padding: 60px 8%;
+    padding: 60px 8% 100px;
     background: rgba(5, 5, 5, 0.95);
     border-top: 1px solid #222;
     text-align: center;
     backdrop-filter: blur(5px);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+    text-align: left;
+}
+
+.footer-info p {
+    margin-bottom: 8px;
+}
+
+.footer-map {
+    display: flex;
+    align-items: center;
 }
 
 .btn-order {
@@ -327,14 +355,104 @@ footer {
     transform: scale(1.05);
 }
 
+/* --- FADE IN ANIMATION --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- BOUTON APPELER (mobile) --- */
+.btn-call {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 0.9rem;
+    padding: 12px 20px;
+    border-radius: 30px;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.btn-call.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- SCROLL TO TOP --- */
+#scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#scroll-top:hover {
+    background: white;
+    color: var(--primary);
+}
+
 @media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+
     .nav-links {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(15, 17, 15, 0.98);
+        flex-direction: column;
+        padding: 20px 5%;
+        gap: 15px;
+        border-bottom: 2px solid var(--primary);
+    }
+
+    .nav-links.open {
+        display: flex;
     }
 
     .hero {
         height: 60vh; /* less tall on small screens */
         padding: 0 4%;
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('http://googleusercontent.com/image_collection/image_retrieval/3652259489454690353_0');
+        background-size: cover;
+        background-position: center;
     }
 
     .hero h1 {
@@ -358,5 +476,18 @@ footer {
 
     .btn-order, .btn-download {
         padding: 12px 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-map {
+        justify-content: center;
+    }
+
+    .btn-call {
+        display: flex;
     }
 }

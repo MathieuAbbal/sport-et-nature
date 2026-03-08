@@ -23,6 +23,7 @@ jobs:
           # Copy root site files into docs/
           cp index.html docs/index.html
           cp styles.css docs/styles.css
+          cp script.js docs/script.js
           rsync -a --delete assets/ docs/assets/
 
       - name: Commit and push if changed
