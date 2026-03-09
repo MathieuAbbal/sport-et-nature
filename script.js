@@ -50,3 +50,53 @@ var observer = new IntersectionObserver(function (entries) {
 fadeElements.forEach(function (el) {
     observer.observe(el);
 });
+
+// --- Lightbox (agrandissement photo) ---
+var lightbox = document.getElementById('lightbox');
+var lightboxImg = document.getElementById('lightbox-img');
+var currentGallery = [];
+var currentIndex = 0;
+
+document.querySelectorAll('.photo-gallery img').forEach(function (img) {
+    img.addEventListener('click', function () {
+        var gallery = this.closest('.photo-gallery');
+        currentGallery = Array.from(gallery.querySelectorAll('img'));
+        currentIndex = currentGallery.indexOf(this);
+        lightboxImg.src = this.src;
+        lightbox.classList.add('active');
+    });
+});
+
+document.getElementById('lightbox-prev').addEventListener('click', function (e) {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    lightboxImg.src = currentGallery[currentIndex].src;
+});
+
+document.getElementById('lightbox-next').addEventListener('click', function (e) {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    lightboxImg.src = currentGallery[currentIndex].src;
+});
+
+lightboxImg.addEventListener('click', function (e) {
+    e.stopPropagation();
+});
+
+document.getElementById('lightbox-close').addEventListener('click', function () {
+    lightbox.classList.remove('active');
+});
+
+lightbox.addEventListener('click', function () {
+    lightbox.classList.remove('active');
+});
+
+// --- Bouton galerie marquage (ouvre lightbox directement) ---
+document.getElementById('btn-marquage').addEventListener('click', function (e) {
+    e.preventDefault();
+    var hiddenGallery = document.getElementById('gallery-marquage');
+    currentGallery = Array.from(hiddenGallery.querySelectorAll('img'));
+    currentIndex = 0;
+    lightboxImg.src = currentGallery[0].src;
+    lightbox.classList.add('active');
+});
