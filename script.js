@@ -79,7 +79,7 @@ document.getElementById('lightbox-next').addEventListener('click', function (e) 
     lightboxImg.src = currentGallery[currentIndex].src;
 });
 
-lightboxImg.addEventListener('click', function (e) {
+document.querySelector('.lightbox-content').addEventListener('click', function (e) {
     e.stopPropagation();
 });
 
@@ -87,9 +87,7 @@ document.getElementById('lightbox-close').addEventListener('click', function () 
     lightbox.classList.remove('active');
 });
 
-lightbox.addEventListener('click', function () {
-    lightbox.classList.remove('active');
-});
+// Fermeture uniquement via le bouton close (×)
 
 // --- Bouton galerie marquage (ouvre lightbox directement) ---
 document.getElementById('btn-marquage').addEventListener('click', function (e) {
