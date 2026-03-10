@@ -82,17 +82,37 @@ nav {
 
 /* --- HERO --- */
 .hero {
+    position: relative;
     height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 0 8%;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/rando-caroux.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    overflow: hidden;
     border-bottom: 5px solid var(--primary);
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-logo {
@@ -184,6 +204,69 @@ section {
     font-weight: 600;
 }
 
+/* --- BANDEAU MARQUES --- */
+.brands-marquee {
+    margin-top: 30px;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.brands-track {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    width: max-content;
+    animation: scroll-brands 20s linear infinite;
+}
+
+.brands-track img {
+    height: 55px;
+    max-width: 150px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.brands-track img.brand-hoka {
+    height: 35px;
+}
+
+.brands-track img:hover {
+    opacity: 1;
+}
+
+@keyframes scroll-brands {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --- GRILLE LOGOS CLIENTS --- */
+.clients-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+.clients-grid img {
+    height: 60px;
+    max-width: 150px;
+    width: auto;
+    object-fit: contain;
+    background: white;
+    border-radius: 8px;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.clients-grid img:hover {
+    opacity: 1;
+    transform: scale(1.3);
+}
+
 /* --- SORTIES & BALLADES --- */
 .event-box {
     background: linear-gradient(45deg, rgba(26, 29, 26, 0.9), rgba(10, 10, 10, 0.9));
@@ -195,9 +278,15 @@ section {
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 20px;
-    border: 1px solid rgba(255, 102, 0, 0.1);
-    border-left: 5px solid var(--primary);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+
+.event-box:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(45deg, rgba(34, 34, 34, 0.95), rgba(20, 20, 20, 0.95));
+    border-color: var(--primary);
 }
 
 .event-date {
@@ -269,6 +358,13 @@ section {
 .review .text {
     font-size: 0.9rem;
     line-height: 1.4;
+}
+
+.review .author {
+    font-size: 0.8rem;
+    color: var(--primary);
+    margin-top: 8px;
+    font-weight: 600;
 }
 
 .review .via {
@@ -600,9 +696,10 @@ footer {
     .hero {
         height: 60vh; /* less tall on small screens */
         padding: 0 4%;
-        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('assets/rando-caroux.jpg');
-        background-size: cover;
-        background-position: center;
+    }
+
+    .hero-overlay {
+        background: rgba(0, 0, 0, 0.3);
     }
 
     .hero h1 {

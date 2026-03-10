@@ -114,12 +114,20 @@
     }
     </script>
 
-    <!-- Fonts & CSS -->
+    <!-- Preconnect hero image (LCP) -->
+
+    <!-- CSS critique -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Fonts (non bloquantes) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Oswald:wght@700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+        rel="stylesheet" media="print" onload="this.media='all'">
+
+    <!-- Font Awesome (non bloquant) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/all.min.css" media="print" onload="this.media='all'">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -141,13 +149,17 @@
     </nav>
 
     <header class="hero">
-        <div>
-            <img src="assets/logo/LOGO-sport-nature.png" alt="Logo Lamalou Sport et Nature - Magasin de sport à Lamalou-les-Bains" class="hero-logo">
+        <img src="assets/rando-caroux.jpg" alt="Randonnée dans le Caroux" class="hero-bg" fetchpriority="high" width="1920" height="1080">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="assets/logo/LOGO-sport-nature.png" alt="Logo Lamalou Sport et Nature - Magasin de sport à Lamalou-les-Bains" class="hero-logo" width="280" height="280">
             <h1>BIENVENUE CHEZ<br><span>Votre spécialiste</span></h1>
             <p style="margin-top: 15px; font-weight: 600; letter-spacing: 1px;">TRAIL • RANDONNÉE • SPORTS COLLECTIFS •
                 TEXTILE PRO</p>
         </div>
     </header>
+
+    <main>
 
     <section id="univers" class="fade-in">
         <h2 class="section-title">Nos Secteurs d'activité</h2>
@@ -198,6 +210,24 @@
                 <span class="tag">Serviettes</span>
                 <span class="tag">Bonnets de bain</span>
             </div>
+            <!-- Bandeau marques défilant -->
+            <div class="brands-marquee">
+                <div class="brands-track">
+                    <img src="assets/marques/salomon-alt.png" alt="Salomon">
+                    <img src="assets/marques/lafuma.png" alt="Lafuma">
+                    <img src="assets/marques/the-north-face.png" alt="The North Face">
+                    <img src="assets/marques/petzl.png" alt="Petzl">
+                    <img src="assets/marques/hoka.svg" alt="Hoka" class="brand-hoka">
+                    <img src="assets/marques/la-sportiva.png" alt="La Sportiva">
+                    <!-- Doublé pour défilement continu -->
+                    <img src="assets/marques/salomon-alt.png" alt="Salomon">
+                    <img src="assets/marques/lafuma.png" alt="Lafuma">
+                    <img src="assets/marques/the-north-face.png" alt="The North Face">
+                    <img src="assets/marques/petzl.png" alt="Petzl">
+                    <img src="assets/marques/hoka.svg" alt="Hoka" class="brand-hoka">
+                    <img src="assets/marques/la-sportiva.png" alt="La Sportiva">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -223,6 +253,7 @@
             <div class="photo-gallery">
                 <img src="assets/marquage/marquages-00.jpg" alt="Flyer marquage textile" loading="lazy">
                 <img src="assets/marquage/marquages-01.jpg" alt="Flyer marquage textile" loading="lazy">
+                <img src="assets/marquage/marquages-001.jpg" alt="Marquage textile" loading="lazy">
             </div>
             <div class="photo-gallery hidden" id="gallery-marquage">
                 <img src="assets/marquage/marquages-02.jpg" alt="Marquage textile" loading="lazy">
@@ -289,19 +320,23 @@
                 <img src="assets/photos/caroux/table.jpg" alt="Apéritif convivial dans le Caroux" loading="lazy">
                 <img src="assets/photos/caroux/table_2.jpg" alt="Apéritif convivial dans le Caroux" loading="lazy">
             </div>
-        </div>
+        </div> 
     </section>
 
     <section id="location" class="fade-in" style="background: rgba(17, 17, 17, 0.6);">
         <h2 class="section-title">Location de vélos</h2>
         <div class="card" style="width:100%;background: rgba(26,29,26,0.95);">
-            <p>Situé à deux pas de la voie verte, notre magasin propose la location de :</p>
+            <p>Situé à deux pas de la voie verte « Passa Païs », notre magasin vous propose des vélos à la location pour profiter pleinement du parcours.</p>
             <div class="product-tags">
                 <span class="tag">Vélos</span>
-                <span class="tag"> Vélos électriques</span>
-
+                <span class="tag">Vélos électriques</span>
             </div>
             <p style="margin-top:15px;">Réservation recommandée.</p>
+            <div class="photo-gallery">
+                <img src="assets/photos/voie_verte/voie_verte.webp" alt="Voie verte Passa Païs - location de vélos à Lamalou-les-Bains" loading="lazy">
+                <img src="assets/photos/voie_verte/voie_verte_02.jpg" alt="Voie verte Passa Païs" loading="lazy">
+                <img src="assets/photos/voie_verte/itineraires-voie-verte-passa-pais.jpg" alt="Itinéraires voie verte Passa Païs" loading="lazy">
+            </div>
         </div>
     </section>
 
@@ -319,22 +354,78 @@
     <section id="avis" class="fade-in" style="background: rgba(17, 17, 17, 0.7);">
         <h2 class="section-title">Ce que disent nos clients</h2>
         <div class="reviews">
-            <!-- Example static reviews; replace with widget or real data -->
             <div class="review">
                 <p class="stars">★★★★★</p>
-                <p class="text">"Au top" – Anissa B.</p>
-            </div>
-            <div class="review">
-                <p class="stars">★★★★☆</p>
-                <p class="text">"Prix et produits parfaits." – Mathieu B.</p>
+                <p class="text">"Mon mari et moi avons appelé samedi matin et nous avons pu louer des vélos pour l'après-midi même. Super vélos, les propriétaires sont très sympathiques et rapides !"</p>
+                <p class="author">– Dany P. · Février 2026</p>
             </div>
             <div class="review">
                 <p class="stars">★★★★★</p>
-                <p class="text">"service au top, location de vélo ce jour, très satisfait de l'accueil et du service, je
-                    recommande." – Jean Paul G.</p>
+                <p class="text">"Loué un vélo pour l'après midi. Accueil au top, chaleureux. Matériel et prix de location : correct. Je recommande +++"</p>
+                <p class="author">– Éric D. · Février 2024</p>
+            </div>
+            <div class="review">
+                <p class="stars">★★★★★</p>
+                <p class="text">"Excellent !!! Vélo à la hauteur de nos demandes, conseils super sympa. Je recommande vivement pour la location et la boutique !!!"</p>
+                <p class="author">– Kamel L. · Juin 2022</p>
+            </div>
+            <div class="review">
+                <p class="stars">★★★★★</p>
+                <p class="text">"Service au top, location de vélo ce jour, très satisfait de l'accueil et du service, je recommande."</p>
+                <p class="author">– Jean Paul G. · Juin 2022</p>
+            </div>
+            <div class="review">
+                <p class="stars">★★★★★</p>
+                <p class="text">"Merci pour les conseils à propos du matériel. Le gérant propose des vélos à la location et vous emmène en balade le mardi sur réservation."</p>
+                <p class="author">– Y. U. · Juin 2022</p>
+            </div>
+            <div class="review">
+                <p class="stars">★★★★★</p>
+                <p class="text">"Vraiment au top, tout est correct, super accueil, vraiment rien à dire."</p>
+                <p class="author">– Zoé V. · Octobre 2024</p>
+            </div>
+            <div class="review">
+                <p class="stars">★★★★★</p>
+                <p class="text">"Au top"</p>
+                <p class="author">– Anissa B. · Avril 2022</p>
+            </div>
+            <div class="review">
+                <p class="stars">★★★★★</p>
+                <p class="text">"Prix et produits parfaits !!"</p>
+                <p class="author">– Mathieu B. · Septembre 2022</p>
+            </div>
+            <div class="review">
+                <p class="stars">★★★★★</p>
+                <p class="text">"Conseils d'experts"</p>
+                <p class="author">– Rémi F. · Mai 2023</p>
             </div>
         </div>
     </section>
+
+    <section id="confiance" class="fade-in" style="background: rgba(17, 17, 17, 0.6);">
+        <h2 class="section-title">Ils nous ont fait confiance</h2>
+        <div class="clients-grid">
+            <img src="assets/clients/Grandorb_logo.jpg" alt="Grand Orb Tourisme" loading="lazy">
+            <img src="assets/clients/camping-caroux.avif" alt="Camping du Caroux" loading="lazy">
+            <img src="assets/clients/la-casa-des-castel-logo.jpg" alt="La Casa des Castel" loading="lazy">
+            <img src="assets/clients/logo-Verniere.png" alt="Vernière" loading="lazy">
+            <img src="assets/clients/haut-canton-renovation.svg" alt="Haut Canton Rénovation" loading="lazy">
+            <img src="assets/clients/crus-faugeres.png" alt="Crus Faugères" loading="lazy">
+            <img src="assets/clients/lamalou.jpg" alt="Lamalou-les-Bains" loading="lazy" style="padding: 10px;">
+            <img src="assets/clients/montagne_caroux.png" alt="Montagne du Caroux" loading="lazy">
+            <img src="assets/clients/caroux-x-trail.jpg" alt="Caroux X Trail" loading="lazy" style="padding: 6px;">
+            <img src="assets/clients/acroroc.png" alt="Acroroc" loading="lazy">
+            <img src="assets/clients/clapas.jpg" alt="Clapas" loading="lazy">
+            <img src="assets/clients/axa.jpg" alt="AXA" loading="lazy" style="padding: 2px;">
+            <img src="assets/clients/jean-roger.png" alt="Jean Roger" loading="lazy" style="padding: 6px;">
+            <img src="assets/clients/apsh34.png" alt="APSH 34" loading="lazy" style="padding: 6px;">
+            <img src="assets/clients/logo_lodève.jpg" alt="Lodève" loading="lazy">
+            <img src="assets/clients/bousquet.png" alt="Bousquet" loading="lazy">
+            <img src="assets/clients/vertical_raid.png" alt="Vertical Raid" loading="lazy">
+        </div>
+    </section>
+
+    </main>
 
     <footer>
         <div class="footer-grid">
@@ -352,15 +443,16 @@
             </div>
             <div class="footer-map">
                 <iframe
+                    title="Localisation Sport &amp; Nature à Lamalou-les-Bains"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d901.9587535775867!2d3.0814422896025455!3d43.5926820341483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b19d4b93c67fd7%3A0xb12cd89886f63690!2sSport%20%26%20Nature!5e1!3m2!1sfr!2sfr!4v1772978829951!5m2!1sfr!2sfr"
-                    width="250" height="250"
+                    width="400" height="350"
                     style="border: 2px solid var(--primary); border-radius: 10px; max-width: 100%;" allowfullscreen=""
                     loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
         <p style="color: #666; font-size: 0.8rem; margin-top: 30px;">&copy;
             <script>document.write(new Date().getFullYear())</script> - Lamalou Sport &
-            Nature
+            Nature - v2 by Matou
         </p>
     </footer>
 
